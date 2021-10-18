@@ -1,10 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from './Components/PrivateRoute';
 import axios from "axios";
-import HomePage from "./components/HomePage";
+import HomePage from "./Components/HomePage";
 import { Route, Link, Switch } from "react-router-dom";
-import Register from "./components/Register";
+import Register from './Components/Register';
+import LoginPage from "./Components/Login";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route path={"/register"}>
           <Register />
+        </Route>
+        <Route path={"/login"}>
+          <LoginPage />
         </Route>
       </Switch>
     </div>
