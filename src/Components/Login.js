@@ -26,8 +26,13 @@ const LoginPage = () => {
         });
     }
 
+    const routeToHome = () => {
+        push('/')
+    }
+
     return(
         <div>
+            <button onClick={routeToHome}>Home</button>
             <form onSubmit={onSubmit}>
                 <label>Username/Email: </label>
                 <input name='username_email' type='text' value={state.username_email} onChange={handleChange}></input>
