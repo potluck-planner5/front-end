@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from './Components/PrivateRoute';
 import axios from "axios";
 
 function App() {
