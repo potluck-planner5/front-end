@@ -7,8 +7,16 @@ import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-
 import SearchIcon from '@mui/icons-material/Search';
+
+import {
+  Menu,
+  MenuItem,
+  MenuButton
+} from '@szhsin/react-menu';
+import '@szhsin/react-menu/dist/index.css';
+import '@szhsin/react-menu/dist/transitions/slide.css';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -52,9 +60,40 @@ const Search = styled('div')(({ theme }) => ({
     },
   }));
 
+  // function SignedIn(props) {
+  //   const SingedIn = props.something;
+  //   if(SignedIn) {
+  //     return 
+  //       <Link to={'/profile'} style={{textDecoration: 'none'}}>
+  //         <Box>
+  //           <Box>
+  //             <img></img>
+  //           </Box>
+  //             <Menu menuButton={<MenuButton>Username</MenuButton>} transition>
+  //              <Link to={'/profile'}>
+  //                <MenuItem>Profile</MenuItem>
+  //              </Link>
+  //              <Link to={'/dashboard'}>
+  //                <MenuItem>Dashboard</MenuItem>
+  //              </Link>
+  //              <Link to={'/homepage'}>
+  //                <MenuItem>Home Page</MenuItem>
+  //              </Link>
+  //            </Menu>
+  //         </Box>
+  //       </Link>
+  //   }
+  //   return 
+  //     <Link to={'/login'} style={{ textDecoration: 'none'}}>
+  //       <Button variant="contained">Sign In</Button>
+  //     </Link>
+  //     <Link to={'/register'} style={{ textDecoration: 'none'}}>
+  //       <Button variant="contained">Register</Button>
+  //     </Link>
+  // }
+
 function Header() {
-
-
+  
     return(
         <div>
             <Box sx={{ flexGrow: 1 }}>
