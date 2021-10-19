@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -78,8 +78,12 @@ function Header() {
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
-                    <Button variant="contained">Sign In</Button>
-                    <Button variant="contained">Register</Button>
+                    <Link to={'/login'}>
+                        <Button variant="contained">Sign In</Button>
+                    </Link>
+                    <Link to={'/register'}>
+                        <Button variant="contained">Register</Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
             </Box>
