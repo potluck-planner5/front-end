@@ -78,10 +78,10 @@ function Header() {
                     inputProps={{ 'aria-label': 'search' }}
                     />
                 </Search>
-                    <Link to={'/login'}>
+                    <Link to={'/login'} style={{ textDecoration: 'none'}}>
                         <Button variant="contained">Sign In</Button>
                     </Link>
-                    <Link to={'/register'}>
+                    <Link to={'/register'} style={{ textDecoration: 'none'}}>
                         <Button variant="contained">Register</Button>
                     </Link>
                 </Toolbar>
