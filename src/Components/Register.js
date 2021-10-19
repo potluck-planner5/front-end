@@ -1,25 +1,102 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import axios from "axios";
+import { Paper } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import { FilledInput } from "@mui/material";
+import { Box } from "@mui/system";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
 const initialValues = {
   email: "",
   username: "",
   password: "",
+  showPassword: false,
 };
 
 const Register = (props) => {
   const { push } = useHistory();
-  const [credentials, setCredentials] = useState(initialValues);
+  const [values, setValues] = useState(initialValues);
   const [error, setError] = useState();
 
-  const handleChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  const handleChange = (prop) => (e) => {
+    setValues({ ...values, [prop]: e.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   return (
-    <div>
-      <h1>Register goes here</h1>
+    <div className="register">
+      <Typography variant="h4" gutterBottom>
+        Register
+      </Typography>
+      <Paper sx={{ display: "inline-block" }}>
+        <Box sx={{ display: "flex", flexDirection: "column" }}>
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+            <InputLabel htmlFor="outlined-username">Username</InputLabel>
+            <OutlinedInput
+              id="outlined-username"
+              value={values.username}
+              onChange={handleChange("username")}
+              label="Username"
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+            <InputLabel htmlFor="outlined-eMail">E-Mail</InputLabel>
+            <OutlinedInput
+              id="outlined-eMail"
+              value={values.email}
+              onChange={handleChange("email")}
+              label="Email"
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+            <InputLabel htmlFor="outlined-adornment-password">
+              Password
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={values.showPassword ? "text" : "password"}
+              value={values.password}
+              onChange={handleChange("password")}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl>
+
+          <Button variant="contained">Click me baby</Button>
+        </Box>
+      </Paper>
     </div>
   );
 };
