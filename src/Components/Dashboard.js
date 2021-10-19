@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Header from "./Header"
 import Button from '@mui/material/Button'
 
-// function DashboardButtons(props) {
+// const DashboardButtons(props) {
 //     const isOrganizer = props.something;
 //     if (isOrganizer) {
 //         return 
@@ -32,11 +32,11 @@ export default function Dashboard() {
 
     return (
         <div>
-            <Header />
+            
             <Box flex align-items="center" >
                 <Box width="100%" paddingTop="2%" paddingBottom="4%" backgroundColor="yellow" >
                     <h1> Dashboard </h1>
-                    <p> Potluck Planner filler text I guess yadda yadda </p>
+                    <p> Below you can create and edit events as an organizer, or register what items you will bring as a guest! </p>
                 </Box>
             </Box>
             <Box width="100%" flex sx={{ alignItems: 'center'}} >
