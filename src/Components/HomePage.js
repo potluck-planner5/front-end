@@ -3,11 +3,16 @@ import { useHistory } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 
+
 export default function HomePage() {
   const history = useHistory();
 
   const routeToRegister = () => {
     history.push("/register");
+  };
+
+  const routeToLogin = () => {
+    history.push("/login");
   };
 
   return (
@@ -27,6 +32,11 @@ export default function HomePage() {
             onClick={routeToRegister}
             className="reg-button">
           Register Now!
+        </button>
+        <button 
+            onClick={routeToLogin}
+            className="log-button">
+          Login!
         </button>
       </div>
       <div>
