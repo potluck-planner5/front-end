@@ -36,7 +36,7 @@ export default function Dashboard() {
             <Box flex align-items="center" >
                 <Box width="100%" paddingTop="2%" paddingBottom="4%" backgroundColor="yellow" >
                     <h1> Dashboard </h1>
-                    <p> Below you can create and edit events as an organizer, or register what items you will bring as a guest! </p>
+                    <p> Below you can create and view events as an organizer, or register what items you will bring as a guest! </p>
                 </Box>
             </Box>
             <Box width="100%" flex sx={{ alignItems: 'center'}} >
@@ -48,7 +48,7 @@ export default function Dashboard() {
                     </Link>
                     <Link style={{ textDecoration: 'none'}}>
                         <Button variant="contained" sx={{ width:"40%", mr:"20%", ml:"20%", mt:"5%", pt:"2%", pb:"2%" }}>
-                            <h2>Edit Event </h2>
+                            <h2>View Event </h2>
                         </Button>
                     </Link>    
                 </Box>

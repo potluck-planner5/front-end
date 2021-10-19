@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
 import Register from './Components/Register';
 import LoginPage from "./Components/Login";
 import Dashboard from './Components/Dashboard'
+import EventInfo from './Components/EventInfo'
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Route path={'/dashboard'}>
           <Dashboard />
         </Route>
+        <Route path={'/event_info'}>
+          <EventInfo />
+        </Route>
+        
       </Switch>
 
     </div>
