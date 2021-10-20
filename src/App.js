@@ -10,6 +10,7 @@ import LoginPage from "./Components/Login";
 import Dashboard from './Components/Dashboard'
 import EventInfo from './Components/EventInfo'
 import Header from "./Components/Header"
+import Profile from "./Components/Profile"
 
 function App() {
   return (
@@ -28,8 +29,11 @@ function App() {
         <Route path={"/dashboard"}>
           <Dashboard />
         </Route>
-        <Route path={'/event_info'}>
+        <Route path={"/event_info"}>
           <EventInfo />
+        </Route>
+        <Route path={"/profile"}>
+          <Profile />
         </Route>
         
       </Switch>
