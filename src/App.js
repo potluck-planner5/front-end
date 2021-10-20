@@ -9,18 +9,20 @@ import Register from './Components/Register';
 import LoginPage from "./Components/Login";
 import Dashboard from './Components/Dashboard'
 import EventInfo from './Components/EventInfo'
+import Header from "./Components/Header"
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Switch>
-        <Route exact path={"/"}>
+        <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path={"/register"}>
+        <Route path="/register">
           <Register />
         </Route>
-        <Route path={"/login"}>
+        <Route path="/login">
           <LoginPage />
         </Route>
         <Route path={"/dashboard"}>
@@ -31,8 +33,6 @@ function App() {
         </Route>
         
       </Switch>
-
-
     </div>
   );
 }
