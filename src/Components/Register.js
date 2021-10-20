@@ -16,17 +16,22 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
+import axioswithAuth from "../utils/axiosWithAuth";
 
 const initialValues = {
-  email: "",
+  //   email: "",
   username: "",
   password: "",
+};
+
+const initialPWDisplay = {
   showPassword: false,
 };
 
 const Register = (props) => {
   const { push } = useHistory();
   const [values, setValues] = useState(initialValues);
+  const [showPw, setShowPw] = useState(initialPWDisplay);
   const [error, setError] = useState();
 
   const handleChange = (prop) => (e) => {
@@ -34,14 +39,27 @@ const Register = (props) => {
   };
 
   const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
+    setShowPw({ showPassword: !showPw.showPassword });
   };
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
+  };
+
+  const handleSubmit = () => {
+    axios
+      .post(
+        "https://potluck-planning-app.herokuapp.com/api/auth/register",
+        values
+      )
+      .then((res) => {
+        console.log(res);
+        setValues(initialValues);
+        push("login");
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
   };
 
   return (
@@ -60,7 +78,7 @@ const Register = (props) => {
               label="Username"
             />
           </FormControl>
-          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+          {/* <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
             <InputLabel htmlFor="outlined-eMail">E-Mail</InputLabel>
             <OutlinedInput
               id="outlined-eMail"
@@ -68,14 +86,14 @@ const Register = (props) => {
               onChange={handleChange("email")}
               label="Email"
             />
-          </FormControl>
+          </FormControl> */}
           <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
             <InputLabel htmlFor="outlined-adornment-password">
               Password
             </InputLabel>
             <OutlinedInput
               id="outlined-adornment-password"
-              type={values.showPassword ? "text" : "password"}
+              type={showPw.showPassword ? "text" : "password"}
               value={values.password}
               onChange={handleChange("password")}
               endAdornment={
@@ -86,7 +104,7 @@ const Register = (props) => {
                     onMouseDown={handleMouseDownPassword}
                     edge="end"
                   >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                    {showPw.showPassword ? <VisibilityOff /> : <Visibility />}
                   </IconButton>
                 </InputAdornment>
               }
@@ -94,7 +112,9 @@ const Register = (props) => {
             />
           </FormControl>
 
-          <Button variant="contained">Click me baby</Button>
+          <Button onClick={handleSubmit} variant="contained">
+            Click me baby
+          </Button>
         </Box>
       </Paper>
     </div>
