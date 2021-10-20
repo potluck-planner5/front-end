@@ -2,11 +2,12 @@ import logo from "./logo.svg";
 import "./App.css";
 import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
-import HomePage from "./components/HomePage";
-import { Route, Link, Switch } from "react-router-dom";
-import Register from "./components/Register";
-import LoginPage from "./components/Login";
-import Dashboard from "./components/Dashboard";
+
+import HomePage from "./Components/HomePage";
+import { Link, Route, Switch} from "react-router-dom";
+import Register from './Components/Register';
+import LoginPage from "./Components/Login";
+import Dashboard from './Components/Dashboard'
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           <Dashboard />
         </Route>
       </Switch>
+
+
     </div>
   );
 }
