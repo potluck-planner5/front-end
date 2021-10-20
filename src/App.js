@@ -1,10 +1,10 @@
-
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from './Components/PrivateRoute';
+import PrivateRoute from "./Components/PrivateRoute";
 import axios from "axios";
+
 import HomePage from "./Components/HomePage";
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
+import { Link, Route, Switch} from "react-router-dom";
 import Register from './Components/Register';
 import LoginPage from "./Components/Login";
 import Dashboard from './Components/Dashboard'
@@ -23,7 +23,7 @@ function App() {
         <Route path={"/login"}>
           <LoginPage />
         </Route>
-        <Route path={'/dashboard'}>
+        <Route path={"/dashboard"}>
           <Dashboard />
         </Route>
         <Route path={'/event_info'}>
@@ -31,6 +31,7 @@ function App() {
         </Route>
         
       </Switch>
+
 
     </div>
   );
