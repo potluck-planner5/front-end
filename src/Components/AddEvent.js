@@ -12,6 +12,7 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
+import itemServices from "../services/itemServices";
 
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
@@ -23,38 +24,80 @@ const initialDetailValues = {
   location: "",
 };
 
+const initialItemValues = {
+  completed: false,
+  item_name: "",
+  person_bringing: null,
+};
+
 const AddEvent = (props) => {
   const { push } = useHistory();
   const [eventDetails, setEventDetails] = useState(initialDetailValues);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(initialItemValues);
   const [error, setError] = useState();
+
+  //   useEffect(() => {
+  //     axioswithAuth()
+  //       .get("https://potluck-planning-app.herokuapp.com/api/items/11")
+  //       .then((res) => {
+  //         console.log(res.data);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }, []);
 
   const handleChange = (prop) => (e) => {
     setEventDetails({ ...eventDetails, [prop]: e.target.value });
   };
+  const handleItemsChange = (prop) => (e) => {
+    setItems({ ...items, [prop]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axioswithAuth()
-      .post(
-        "https://potluck-planning-app.herokuapp.com/api/parties",
-        eventDetails
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
-  };
 
-  useEffect(() => {
-    axioswithAuth()
-      .get("https://potluck-planning-app.herokuapp.com/api/items/7")
-      .then((res) => {
-        console.log(res.data);
+    const postItems = async () => {
+      const asyncPartyId = await itemServices(eventDetails).then((res) => {
+        console.log("promise response:", res);
+        axioswithAuth()
+          .post(
+            `https://potluck-planning-app.herokuapp.com/api/items/${res} `,
+            items
+          )
+          .then((res) => {
+            console.log(res);
+          })
+          .catch((err) => {
+            console.log(err.response);
+          });
       });
-  }, []);
+    };
+    postItems();
+
+    // axioswithAuth()
+    //   .post(
+    //     "https://potluck-planning-app.herokuapp.com/api/parties",
+    //     eventDetails
+    //   )
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response);
+    //   });
+    // axioswithAuth()
+    //   .post(
+    //     `https://potluck-planning-app.herokuapp.com/parties/${partyId}`,
+    //     items
+    //   )
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+  };
 
   return (
     <div className="add-event">
@@ -88,6 +131,15 @@ const AddEvent = (props) => {
               value={eventDetails.location}
               onChange={handleChange("location")}
               label="location"
+            />
+          </FormControl>
+          <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+            <InputLabel htmlFor="outlined-items">Items</InputLabel>
+            <OutlinedInput
+              id="outlined-eMail"
+              value={items.item_name}
+              onChange={handleItemsChange("item_name")}
+              label="items"
             />
           </FormControl>
 
