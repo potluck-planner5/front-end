@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import axioswithAuth from "../utils/axiosWithAuth";
 import EditEvents from "./EditEvents";
 
+
 // const DashboardButtons(props) {
 //     const isOrganizer = props.something;
 //     if (isOrganizer) {
@@ -31,6 +32,7 @@ import EditEvents from "./EditEvents";
 // }
 
 export default function Dashboard() {
+
   return (
     <div>
       <Box flex align-items="center">
@@ -85,3 +87,4 @@ export default function Dashboard() {
     </div>
   );
 }
+

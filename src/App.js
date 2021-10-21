@@ -3,15 +3,17 @@ import "./App.css";
 import PrivateRoute from "./Components/PrivateRoute";
 import axios from "axios";
 
+import EventInfo from './components/EventInfo'
 import HomePage from "./Components/HomePage";
 import { Link, Route, Switch } from "react-router-dom";
-
+import Profile from './components/Profile'
 import Register from "./components/Register";
 import LoginPage from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
 import AddEvent from "./components/AddEvent";
 import EditEvents from "./components/EditEvents";
+
 
 
 function App() {
@@ -33,6 +35,12 @@ function App() {
         <PrivateRoute path={"/dashboard"} component={Dashboard} />
         <PrivateRoute path={"/add-event"} component={AddEvent} />
         <PrivateRoute path={"/edit-event"} component={EditEvents} />
+          <Route path ='/profile'>
+          <Profile />
+         </Route> 
+        <Route path={'/event_info'}>
+          <EventInfo />
+        </Route>
       </Switch>
     </div>
   );
