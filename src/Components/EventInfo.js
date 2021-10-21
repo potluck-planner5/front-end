@@ -1,6 +1,9 @@
 import React from 'react'
 import Box from '@mui/material/Box'
 
+import userEvent from '@testing-library/user-event'
+
+
 
 const mockGuestList = [ {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]}, 
                         {name: "Sally", food: ["Salad", "Chips", "Salsa","Plates"]},

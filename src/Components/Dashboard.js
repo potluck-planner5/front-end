@@ -33,6 +33,7 @@ import EditEvents from "./EditEvents";
 
 export default function Dashboard() {
 
+
   return (
     <div>
       <Box flex align-items="center">
@@ -87,4 +88,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
 

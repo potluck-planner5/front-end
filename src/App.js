@@ -3,6 +3,7 @@ import "./App.css";
 import PrivateRoute from "./Components/PrivateRoute";
 import axios from "axios";
 
+
 import EventInfo from './components/EventInfo'
 import HomePage from "./Components/HomePage";
 import { Link, Route, Switch } from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
+
         <PrivateRoute path={"/dashboard"} component={Dashboard} />
         <PrivateRoute path={"/add-event"} component={AddEvent} />
         <PrivateRoute path={"/edit-event"} component={EditEvents} />
