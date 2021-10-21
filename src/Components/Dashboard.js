@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, Route, Switch } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Header from "./Header";
 import Button from "@mui/material/Button";
+import axioswithAuth from "../utils/axiosWithAuth";
+import EditEvents from "./EditEvents";
 
 // const DashboardButtons(props) {
 //     const isOrganizer = props.something;
@@ -63,7 +65,7 @@ export default function Dashboard() {
               <h2> Create New Event </h2>
             </Button>
           </Link>
-          <Link style={{ textDecoration: "none" }}>
+          <Link to="/edit-event" style={{ textDecoration: "none" }}>
             <Button
               variant="contained"
               sx={{

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router";
+import axioswithAuth from "../utils/axiosWithAuth";
 
 const LoginPage = () => {
   const { push } = useHistory();
@@ -53,7 +54,7 @@ const LoginPage = () => {
         push("/dashboard");
       })
       .catch((err) => {
-        console.log(err.response);
+        console.log(err);
       });
   };
 

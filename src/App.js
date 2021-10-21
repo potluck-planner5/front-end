@@ -5,16 +5,21 @@ import axios from "axios";
 
 import HomePage from "./Components/HomePage";
 import { Link, Route, Switch } from "react-router-dom";
-import Register from "./Components/Register";
-import LoginPage from "./Components/Login";
-import Dashboard from "./Components/Dashboard";
-import Header from "./Components/Header";
-import AddEvent from "./Components/AddEvent";
+
+import Register from "./components/Register";
+import LoginPage from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import AddEvent from "./components/AddEvent";
+import EditEvents from "./components/EditEvents";
+
 
 function App() {
+  const isLoggedIn = localStorage.getItem("token");
+
   return (
     <div className="App">
-      <Header />
+      <Header isLoggedIn={isLoggedIn} />
       <Switch>
         <Route exact path="/">
           <HomePage />
@@ -25,8 +30,9 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <PrivateRoute path="/add-event" component={AddEvent} />
+        <PrivateRoute path={"/dashboard"} component={Dashboard} />
+        <PrivateRoute path={"/add-event"} component={AddEvent} />
+        <PrivateRoute path={"/edit-event"} component={EditEvents} />
       </Switch>
     </div>
   );
