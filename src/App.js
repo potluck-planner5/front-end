@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
-import HomePage from "./Components/HomePage";
+import HomePage from "./components/HomePage";
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
-import Register from './Components/Register';
-import LoginPage from "./Components/Login";
-import Dashboard from './Components/Dashboard'
-import EventInfo from './Components/EventInfo'
-import Header from './Components/Header'
-import Profile from './Components/Profile'
+import Register from './components/Register';
+import LoginPage from "./components/Login";
+import Dashboard from './components/Dashboard'
+import EventInfo from './components/EventInfo'
+import Header from './components/Header'
+import Profile from './components/Profile'
 
 function App() {
   return (
