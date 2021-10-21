@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
 
 import HomePage from "./components/HomePage";
@@ -9,6 +9,7 @@ import Register from "./components/Register";
 import LoginPage from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
+import AddEvent from "./components/AddEvent";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <LoginPage />
         </Route>
         <PrivateRoute path="/dashboard" component={Dashboard} />
+        <PrivateRoute path="/add-event" component={AddEvent} />
       </Switch>
     </div>
   );
