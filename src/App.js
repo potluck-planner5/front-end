@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
+
 
 
 import EventInfo from './components/EventInfo'
@@ -14,6 +15,7 @@ import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
 import AddEvent from "./components/AddEvent";
 import EditEvents from "./components/EditEvents";
+
 
 
 
