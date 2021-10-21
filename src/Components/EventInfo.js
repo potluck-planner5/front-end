@@ -1,6 +1,8 @@
 import React from 'react'
 import Box from '@mui/material/Box'
+
 import userEvent from '@testing-library/user-event'
+
 
 
 const mockGuestList = [ {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]}, 
@@ -10,6 +12,7 @@ const mockGuestList = [ {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]
                         {name: "Sally", food: ["Salad", "Chips", "Salsa","Plates"]},
                         {name: "George", food: ["Dessert", "Dip", "Drinks","Humor"]}
                     ]
+
 export default function EventInfo() {
     
     return (
@@ -20,6 +23,7 @@ export default function EventInfo() {
                     <p> Below are all guests that RSVP'd to your event, along with the items they are bringing</p>
                 </Box>
             </Box>
+
           
             <Box backgroundColor="red">
                 <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}  width="70%" pt="2%" ml="15%" backgroundColor="yellow">
@@ -50,6 +54,7 @@ export default function EventInfo() {
                     } 
                 </Box>
             </Box>
+
             <Box width= "70%" borderTop="1px solid red" borderBottom="1px solid red" ml="15%" mt="5%">
             <h2>Guest RSVPs</h2>
             </Box>

@@ -102,15 +102,9 @@ function Header() {
             >
               Potluck Planner
             </Typography>
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ "aria-label": "search" }}
-              />
-            </Search>
+            <Link to={"/dashboard"} style={{ textDecoration: "none" }}>
+              <Button variant="contained">Dashboard</Button>
+            </Link>
             <Link to={"/login"} style={{ textDecoration: "none" }}>
               <Button variant="contained">Login</Button>
             </Link>
