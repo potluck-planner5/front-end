@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./components/PrivateRoute";
+import PrivateRoute from "./Components/PrivateRoute";
 import axios from "axios";
 
-import HomePage from "./components/HomePage";
+import HomePage from "./Components/HomePage";
 import { Link, Route, Switch } from "react-router-dom";
-import Register from "./components/Register";
-import LoginPage from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import Header from "./components/Header";
-import AddEvent from "./components/AddEvent";
+import Register from "./Components/Register";
+import LoginPage from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
+import Header from "./Components/Header";
+import AddEvent from "./Components/AddEvent";
 
 function App() {
   return (
