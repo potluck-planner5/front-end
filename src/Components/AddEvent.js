@@ -36,17 +36,6 @@ const AddEvent = (props) => {
   const [items, setItems] = useState(initialItemValues);
   const [error, setError] = useState();
 
-  //   useEffect(() => {
-  //     axioswithAuth()
-  //       .get("https://potluck-planning-app.herokuapp.com/api/items/11")
-  //       .then((res) => {
-  //         console.log(res.data);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
-
   const handleChange = (prop) => (e) => {
     setEventDetails({ ...eventDetails, [prop]: e.target.value });
   };
@@ -57,12 +46,16 @@ const AddEvent = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const postItems = async () => {
-      const asyncPartyId = await itemServices(eventDetails).then((res) => {
+    axioswithAuth()
+      .post(
+        "https://potluck-planning-app.herokuapp.com/api/parties",
+        eventDetails
+      )
+      .then((res) => {
         console.log("promise response:", res);
         axioswithAuth()
           .post(
-            `https://potluck-planning-app.herokuapp.com/api/items/${res} `,
+            `https://potluck-planning-app.herokuapp.com/api/items/${res.data.party_id} `,
             items
           )
           .then((res) => {
@@ -72,31 +65,6 @@ const AddEvent = (props) => {
             console.log(err.response);
           });
       });
-    };
-    postItems();
-
-    // axioswithAuth()
-    //   .post(
-    //     "https://potluck-planning-app.herokuapp.com/api/parties",
-    //     eventDetails
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err.response);
-    //   });
-    // axioswithAuth()
-    //   .post(
-    //     `https://potluck-planning-app.herokuapp.com/parties/${partyId}`,
-    //     items
-    //   )
-    //   .then((res) => {
-    //     console.log(res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   };
 
   return (
