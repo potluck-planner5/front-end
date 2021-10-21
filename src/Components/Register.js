@@ -55,7 +55,7 @@ const Register = (props) => {
       .then((res) => {
         console.log(res);
         setValues(initialValues);
-        push("login");
+        push("/login");
       })
       .catch((err) => {
         console.log(err.response);
@@ -113,7 +113,7 @@ const Register = (props) => {
           </FormControl>
 
           <Button onClick={handleSubmit} variant="contained">
-            Click me baby
+            Create Account
           </Button>
         </Box>
       </Paper>

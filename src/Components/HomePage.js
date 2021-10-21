@@ -35,7 +35,6 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
-      <Header />
       <HomeDiv>
         <HomeText>
           <h2>Potluck Planner!</h2>
