@@ -23,7 +23,7 @@ export default function Footer() {
         <FooterNav>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="help">Help</Link>
+          <Link to="/help">Help</Link>
         </FooterNav>
       </NavBox>
       <div>
