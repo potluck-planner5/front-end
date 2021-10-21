@@ -2,11 +2,14 @@ import React from 'react'
 import Box from '@mui/material/Box'
 
 
-<<<<<<< HEAD
+const mockGuestList = [ {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]}, 
+                        {name: "Sally", food: ["Salad", "Chips", "Salsa","Plates"]},
+                        {name: "George", food: ["Dessert", "Dip", "Drinks","Humor"]},
+                        {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]}, 
+                        {name: "Sally", food: ["Salad", "Chips", "Salsa","Plates"]},
+                        {name: "George", food: ["Dessert", "Dip", "Drinks","Humor"]}
+                    ]
 
-=======
-const mockGuestList = [{name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]}, {name: "Sally", food: ["Salad", "Chips", "Salsa","Plates"]},{name: "George", food: ["Dessert", "Dip", "Drinks","Humor"]}]
->>>>>>> d5d9c27 (added mapping over mock guest list)
 export default function EventInfo() {
     
     return (
@@ -17,11 +20,10 @@ export default function EventInfo() {
                     <p> Below are all guests that RSVP'd to your event, along with the items they are bringing</p>
                 </Box>
             </Box>
-<<<<<<< HEAD
-=======
+
           
             <Box backgroundColor="red">
-                <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}  width="70%"   ml="15%" backgroundColor="grey.300">
+                <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}  width="70%" pt="2%" ml="15%" backgroundColor="yellow">
                     {
                         mockGuestList.map(guest => {
                             return (
@@ -31,6 +33,7 @@ export default function EventInfo() {
                                     flexDirection: 'column',
                                     width:"30%",
                                     ml: 2.5,
+                                    mb:5,
                                     bgcolor: 'background.paper',
                                     }}
                                 >
@@ -45,24 +48,24 @@ export default function EventInfo() {
                                 </Box>
                             )
                         })
-                    }
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    } 
                 </Box>
             </Box>
->>>>>>> d5d9c27 (added mapping over mock guest list)
+
+            <Box width= "70%" borderTop="1px solid red" borderBottom="1px solid red" ml="15%" mt="5%">
+            <h2>Guest RSVPs</h2>
+            </Box>
+            <Box width= "70%" ml="15%" mt="3%" sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap",}}>
+                {
+                    mockGuestList.map(guest => {
+                        return (
+                            <Box width="30%" ml="3%" m="1%">
+                                <h3>{guest.name}</h3>
+                            </Box>    
+                        )   
+                    })
+                }
+            </Box>
         </div>
     )
 }
