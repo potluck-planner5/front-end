@@ -2,19 +2,29 @@ import logo from "./logo.svg";
 import "./App.css";
 import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
-import HomePage from "./components/HomePage";
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom'
-import Register from './components/Register';
-import LoginPage from "./components/Login";
-import Dashboard from './components/Dashboard'
+
+
+
 import EventInfo from './components/EventInfo'
-import Header from './components/Header'
+import HomePage from "./Components/HomePage";
+import { Link, Route, Switch } from "react-router-dom";
 import Profile from './components/Profile'
+import Register from "./components/Register";
+import LoginPage from "./components/Login";
+import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import AddEvent from "./components/AddEvent";
+import EditEvents from "./components/EditEvents";
+
+
+
 
 function App() {
+  const isLoggedIn = localStorage.getItem("token");
+
   return (
     <div className="App">
-      <Header />
+      <Header isLoggedIn={isLoggedIn} />
       <Switch>
         <Route exact path="/">
           <HomePage />
@@ -25,17 +35,16 @@ function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
-        <PrivateRoute path="/dashboard" component={Dashboard} />
-        <Route path={'/dashboard'}>
-          <Dashboard />
-        </Route>
-        <Route path ='/profile'>
+
+        <PrivateRoute path={"/dashboard"} component={Dashboard} />
+        <PrivateRoute path={"/add-event"} component={AddEvent} />
+        <PrivateRoute path={"/edit-event"} component={EditEvents} />
+          <Route path ='/profile'>
           <Profile />
          </Route> 
         <Route path={'/event_info'}>
           <EventInfo />
         </Route>
-        
       </Switch>
     </div>
   );
