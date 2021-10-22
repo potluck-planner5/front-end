@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from "./components/PrivateRoute";
 import axios from "axios";
 
-import HomePage from "./Components/HomePage";
+import HomePage from "./components/HomePage";
 import { Link, Route, Switch } from "react-router-dom";
 
 import Register from "./components/Register";
@@ -12,7 +12,7 @@ import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
 import AddEvent from "./components/AddEvent";
 import EditEvents from "./components/EditEvents";
-
+import Event from "./components/Event";
 
 function App() {
   const isLoggedIn = localStorage.getItem("token");
@@ -32,7 +32,8 @@ function App() {
         </Route>
         <PrivateRoute path={"/dashboard"} component={Dashboard} />
         <PrivateRoute path={"/add-event"} component={AddEvent} />
-        <PrivateRoute path={"/edit-event"} component={EditEvents} />
+        <PrivateRoute exact path={"/edit-event"} component={EditEvents} />
+        <PrivateRoute exact path={"/edit-event/:id"} component={Event} />
       </Switch>
     </div>
   );
