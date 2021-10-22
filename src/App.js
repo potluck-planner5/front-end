@@ -10,9 +10,8 @@ import { Link, Route, Switch } from "react-router-dom";
 
 
 import EventInfo from './components/EventInfo'
-import HomePage from "./components/HomePage";
-import { Link, Route, Switch } from "react-router-dom";
-import Profile from './components/Profile'
+
+
 import Register from "./components/Register";
 import LoginPage from "./components/Login";
 import Dashboard from "./components/Dashboard";
@@ -47,9 +46,7 @@ function App() {
         <PrivateRoute exact path={"/edit-event/:id"} component={Event} />
 
 
-          <Route path ='/profile'>
-          <Profile />
-         </Route> 
+           
         <Route path={'/event_info'}>
           <EventInfo />
         </Route>
