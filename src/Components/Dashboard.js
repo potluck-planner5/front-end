@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import axioswithAuth from "../utils/axiosWithAuth";
 import EditEvents from "./EditEvents";
 
+
 // const DashboardButtons(props) {
 //     const isOrganizer = props.something;
 //     if (isOrganizer) {
@@ -31,6 +32,8 @@ import EditEvents from "./EditEvents";
 // }
 
 export default function Dashboard() {
+
+
   return (
     <div>
       <Box flex align-items="center">
@@ -38,7 +41,7 @@ export default function Dashboard() {
           width="100%"
           paddingTop="2%"
           paddingBottom="4%"
-          backgroundColor="yellow"
+          backgroundColor="#CAE1F9"
         >
           <h1> Dashboard </h1>
           <p>
@@ -85,3 +88,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+
