@@ -16,17 +16,17 @@ const mockGuestList = [ {name: "Bob", food: ["Milk", "Eggs", "Cheese","Napkins"]
 export default function EventInfo() {
     
     return (
-        <div>
+        <Box backgroundColor="#EDF5FD">
             <Box flex align-items="center" >
-                <Box width="100%" paddingTop="2%" paddingBottom="4%" backgroundColor="yellow" >
+                <Box width="100%" paddingTop="2%" paddingBottom="4%" backgroundColor="#DCEBFB" >
                     <h1> Reserved Items </h1>
                     <p> Below are all guests that RSVP'd to your event, along with the items they are bringing</p>
                 </Box>
             </Box>
 
           
-            <Box backgroundColor="red">
-                <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}  width="70%" pt="2%" ml="15%" backgroundColor="yellow">
+            <Box pt="2%" backgroundColor="#EDF5FD">
+                <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', }}  width="80%" pt="2%" ml="10%" backgroundColor="#DCEBFB">
                     {
                         mockGuestList.map(guest => {
                             return (
@@ -40,11 +40,11 @@ export default function EventInfo() {
                                     bgcolor: 'background.paper',
                                     }}
                                 >
-                                    <Box sx={{ p: 1, bgcolor: 'grey.300' }}><h2>{guest.name}</h2></Box>
+                                    <Box sx={{ p: 1, bgcolor: '#84BAF1' }}><h2>{guest.name}</h2></Box>
                                     {
                                         guest.food.map(item => {
                                             return (
-                                                <Box sx={{ p: 1, bgcolor: 'grey.300' }}>{item}</Box>
+                                                <Box sx={{ p: 1, bgcolor: '#84BAF1' }}>{item}</Box>
                                             )
                                         })
                                     }  
@@ -55,7 +55,7 @@ export default function EventInfo() {
                 </Box>
             </Box>
 
-            <Box width= "70%" borderTop="1px solid red" borderBottom="1px solid red" ml="15%" mt="5%">
+            <Box backgroundColor="#EDF5FD" width= "70%" borderTop="1px solid #1976D2" borderBottom="1px solid #1976D2" ml="15%" mt="5%">
             <h2>Guest RSVPs</h2>
             </Box>
             <Box width= "70%" ml="15%" mt="3%" sx={{ display: "flex", flexDirection: "row", flexWrap: "wrap",}}>
@@ -69,6 +69,6 @@ export default function EventInfo() {
                     })
                 }
             </Box>
-        </div>
+        </Box>
     )
 }

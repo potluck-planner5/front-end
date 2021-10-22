@@ -41,7 +41,7 @@ export default function Dashboard() {
           width="100%"
           paddingTop="2%"
           paddingBottom="4%"
-          backgroundColor="yellow"
+          backgroundColor="#CAE1F9"
         >
           <h1> Dashboard </h1>
           <p>
